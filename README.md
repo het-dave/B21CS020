@@ -117,3 +117,67 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
 
 ## Answers
 Please write your answers here
+Q1. B) UNIX Like Operating Systems
+
+Q2. C) BSD
+
+Q3. A) FAT32
+
+Q4. B) As interrupts
+
+Q5. A) 128
+
+Q6. C) Sh
+
+Q7. A) Round-robin scheduling
+
+Q8. A) Paging
+
+Q9. B) Using hardware interrupts
+
+Q10. B) No
+
+Q11. C) MIT
+
+Q12. The different states that a process can be in the xv6 operating system are as follows:
+   1. Running: The process is currently running/being executed on the CPU.
+   2. Runnable: The process is waiting in the queue for the CPU to be allocated to the process.
+   3. Sleeping: The process is waiting for some other event to occur. eg I/O Operation.
+   4. Unused: The process has either been created or terminated and is not in use.
+   5. Zombie: This is the state when the process has completed execution but its exit status is needed by some parent process and thus it remains in the system until the parent                      retrieves the exit status.
+   6. Embryo: The process is being created i.e. is in the early stages of initialization.
+
+Q13. The XV6 file system consists of:
+   1. Superblocks: Contains the overall file system information.
+   2. Inodes: Data structures representing files and directories.
+   3. Inode Table: Array of inodes.
+   4. Data Blocks: Store file content.
+   5. Directory Entry: Maps filenames to inode numbers.
+   6. Bitmaps: Track free/allocated inodes and data blocks.
+   7. File Descriptor Table: Per-process table for open files.
+
+Q14. System calls are interfaces between user-level applications and the operating system. They provide a way for user programs to request services from the kernel whereas Library functions are routines provided by libraries that applications link against. They are not part of the operating system kernel but offer additional functionality to user programs. eg. The write system call is used to write data to a file, The printf function from the C library is used for formatted output. 
+
+Q15. In XV6, paging is done using a two level page table. The high level page table maps on the lower level page table and the lower level page table references the physical page frame. Some of the benefits of paging are as follows:
+   a. Contiguous Virtual Address Space that helps in simplifying memory allocation
+   b. Isolation as each process has its own page table and the other processes cannot access the page table of any other process.
+
+Q16.
+   1. ls: the ls command lists all the files in the current working directory
+   2. cd: cd is used to change the current working directory.
+   3. cp: cp is used to copy files or directories from one location to another.
+
+Q17. Process synchronization is needed when there are concurrent processes running. It is essential for managing shared resources and avoiding conflicts. Mechanisms used in XV6 in order to perform process synchronizations are locks, semaphores, condition variables etc.
+
+Q18. Interrupts are events that alter normal execution flow of the processes. Interrupts play a crucial role in handling external events and ensuring efficient system operation. Interrupts are handled through interrupt service routines (ISRs) triggered by hardware or software events. The significance of interrupt operations are in I/O operations where a process needs to be be interrupted to wait for the I/O to complete. Interrupts are also used for timekeeping, process scheduling, preemptive multitasking and facilitate interaction with external devices by allowing the OS to respond to device-generated signals promptly.
+
+Q19. Virtual memory provides the illusion of a larger memory space than physically available. It is implemented using Page Tables on the xv6 system. The advantages of using virtual memory are as follows:
+   1. Increased Address Space
+   2. Efficient Utilization of Resources
+   3. Ease of Memory Management
+
+Q20.
+   1. BIOS/UEFI initialization.
+   2. Bootloader (e.g., GRUB) loads XV6 kernel into memory.
+   3. Kernel initialization, sets up memory, filesystems, and essential data structures.
+   4. Transfer control to the main function, initiating the operating system.
